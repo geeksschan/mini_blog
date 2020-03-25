@@ -1,0 +1,127 @@
+@charset "utf-8";
+@import "../scss/common/mixins";
+
+.post_section {
+  
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .post_header {
+    position: relative;
+    display: flex;
+    min-height: 400px;
+    background-image: url("../templates/bg_post_default.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+
+    &::before {
+      content: '';
+      background-color: rgba(0,0,0,0.2);
+      @include fillAbsolute;
+    }
+  
+    .title {
+      position: relative;
+      color: #fff;
+      font-size: 40px;
+      z-index: 1;
+      @include wordWrap;
+    }
+
+    .meta {
+      position: absolute;
+      bottom: 40px;
+      
+      .author, .date {
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .date {
+        margin-left: 10px;
+      }
+    }
+
+  }
+
+  .post_content {
+    padding: 50px 0;
+    // 헤딩 태그에 대한 스타일링
+    h1,h2,h3,h4,h5,h6 {
+      margin: 30px 0 10px;
+      & + p {
+        padding-left: 10px;
+      }
+    }
+
+    h1 { font-size: 36px; }
+    h2 { font-size: 32px; }
+    h3 { font-size: 28px; }
+    h4 { font-size: 24px; }
+    h5 { font-size: 20px; }
+    h6 { font-size: 16px; }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    hr {
+      border: 1px solid #ddd;
+      margin: 25px 10px; 
+    }
+
+    blockquote {
+      position: relative;
+      padding-left: 25px;
+      box-sizing: border-box;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #ddd;
+
+      }
+    }
+
+    ul {
+      margin: 10px 0;
+      
+      li {
+        position: relative;
+        margin-left: 15px;
+        padding-left: 15px;
+        display: block;
+        line-height: 1.8;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 11px;
+          top: calc(14px - 3px);
+          left: 0;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #333;
+
+          & > ul {
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+
+  }
+
+  
+
+}

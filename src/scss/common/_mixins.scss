@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+@mixin fillAbsolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin fillFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+@mixin ellipsis($line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if ($line == 1) {
+    white-space: nowrap;
+  } @else {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+}
+
+@mixin clearEllipsis() {
+  overflow: initial;
+  white-space: normal;
+  text-overflow: initial;
+}
+
+@mixin wordWrap {
+  word-wrap: normal;
+  word-break: keep-all;
+}
+
+@mixin makeTriangle($direction: bottom, $width: 10, $height: 10, $color: #000) {
+
+  $border-width: $width/2;
+  $border-height: $height;
+  @if($direction == bottom) {
+    border-top: $width solid #000;  
+    border-bottom: $width solid transparent;
+  }
+
+  width: 0;
+  height: 0;
+  border-top: $width solid #000;
+  border-right: $width solid #F00;
+  border-bottom: $width solid transparent;
+  border-left: $width solid #00F;
+}

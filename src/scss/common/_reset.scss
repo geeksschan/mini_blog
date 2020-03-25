@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Apple SD Gothic Neo", Arial, Malgun Gothic, 맑은 고딕, Dotum, 돋움, sans-serif;
+}
+
+// TODO: 이렇게 다 넣어야 하는지에 대한 고민, 일반적인 것들 넣고 서비스에 따라서 추가하는 방향이 더 나을지에 대한 고민
+// 일반적인 tag : div, p, span, h1~6, a, em, img, strong, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, figure, figcaption, footer, header, hgroup, 
+div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  // none 보다는 0으로 초기화 
+  // - none은 width 값으로 허용되지 않음 (참고: https://trend21c.tistory.com/287)
+  // - 더 짧음 (참고: https://stackoverflow.com/questions/2922909/should-i-use-border-none-or-border-0)
+  border: 0; // 
+  // TODO: font-size를 상속하는게 좋을지에 대한 고민
+  // font-size: inherit;
+  font-family: inherit;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+nav, ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input, select, button {
+  vertical-align: middle;
+}
+
+input, select, button {
+  border: 0;
+  background: transparent;
+  appearance: none;
+}
+
+i {
+  display: inline-block;
+  font-style: normal;
+}
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+button {
+  display: inline-block;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  margin: -1px;
+}
